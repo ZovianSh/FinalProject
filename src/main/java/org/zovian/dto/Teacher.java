@@ -10,10 +10,19 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Teacher {
-    // private static int nextId = 1;
+    private static int nextId = 1;
+
     private String lname;
     private String fname;
     private Department department;
-    private String id;
+    private String teacherId;
+
+    public Teacher(String fname, String lname, Department department) {
+        //T%03d
+    }
+
+    public String toString() {
+        return null;
+    }
 
 }

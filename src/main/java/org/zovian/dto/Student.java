@@ -13,9 +13,17 @@ public class Student {
     private String fname;
     private String lname;
     private Course[] courses;
-    private String id;
+    private String studentId;
     private int courseNum;
     private Department department;
+
+    public Student(String fname, String lname, Department department) {
+        //S%03d
+    }
+
+    public String toString() {
+        return null;
+    }
 
 
 }

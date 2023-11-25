@@ -11,10 +11,15 @@ import lombok.ToString;
 @Setter
 public class Department {
     private static int nextId = 1;
-    private String id;
+    private String departmentId;
     private String departmentName;
 
     public Department(String departmentName) {
+        //D%03d
+    }
 
+    @Override
+    public String toString() {
+        return null;
     }
 }

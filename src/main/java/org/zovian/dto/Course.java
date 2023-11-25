@@ -11,24 +11,24 @@ import lombok.ToString;
 @Setter
 public class Course {
     private static final int MAX_STUDENT_NUM = 5;
+    private static final int MAX_TEACHER_NUM = 1;
+    private static int nextId = 1;
+
     private double credit;
-    private String id;
+    private String courseId;
     private Student[] students;
     private Department department;
     private int studentNum;
     private Teacher teacher;
     private String courseName;
 
-    public Course(String courseName) {
-
+    public Course(String courseName, double credit, Department department) {
+        //C%03d
     }
 
-    public void addStudent(Student student){
-
-    }
-
-    public void addTeacher(Teacher teacher) {
-
+    @Override
+    public String toString() {
+        return null;
     }
 
 }
