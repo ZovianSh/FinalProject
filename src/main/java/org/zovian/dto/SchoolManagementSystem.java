@@ -30,21 +30,41 @@ public class SchoolManagementSystem {
 
     }
 
-    //methods to add departments, teachers, students, ...
+    /**
+     * Adds a new department to the system with the given department name.
+     * @param departmentName name of the department
+     */
     public void addDepartment(String departmentName) {
 
     }
 
-
-    public void addStudent(String fname, String lname, String studentId) {
+    /**
+     * Adds a new student to the system
+     * @param fname first name of the student
+     * @param lname last name of the student
+     * @param departmentId the ID of the department to which the student belongs
+     */
+    public void addStudent(String fname, String lname, String departmentId) {
 
     }
 
-    public void addTeacher(String fname, String lname, String teacherId) {
+    /**
+     * Adds a new teacher to the system
+     * @param fname first name of the teacher
+     * @param lname last name of the teacher
+     * @param departmentId the ID of the department to which the teacher belongs
+     */
+    public void addTeacher(String fname, String lname, String departmentId) {
 
     }
 
-    public void addCourse(String courseName, double credit, String courseId) {
+    /**
+     * Adds a new course to the system.
+     * @param courseName The name of the course.
+     * @param credit The credit hours associated with the course.
+     * @param departmentId the ID of the department to which the course belongs
+     */
+    public void addCourse(String courseName, double credit, String departmentId) {
 
     }
 
@@ -79,7 +99,7 @@ public class SchoolManagementSystem {
 
     /**
      * Searches for a department in the school based on the provided departmentId.
-     * @param departmentId
+     * @param departmentId the department ID
      * @return the Department with the specified ID, or null if not found.
      */
     public Department findDepartment(String departmentId) {
@@ -88,7 +108,7 @@ public class SchoolManagementSystem {
 
     /**
      * Searches for a teacher in the school based on the provided teacherId.
-     * @param teacherId
+     * @param teacherId the teacher ID
      * @return he Teacher with the specified ID, or null if not found.
      */
     public Teacher findTeacher(String teacherId) {
@@ -97,7 +117,7 @@ public class SchoolManagementSystem {
 
     /**
      * Searches for a course in the school based on the provided courseId.
-     * @param courseId
+     * @param courseId the course ID
      * @return The Course with the specified ID, or null if not found.
      */
     public Course findCourse(String courseId) {
@@ -106,7 +126,7 @@ public class SchoolManagementSystem {
 
     /**
      * Searches for a student in the school based on the provided studentId.
-     * @param studentId
+     * @param studentId the student's ID
      * @return The Student with the specified ID, or null if not found.
      */
     public Student findStudent(String studentId) {
@@ -116,7 +136,7 @@ public class SchoolManagementSystem {
     /**
      * Assigns a teacher to a specific course based on the provided teacherId and courseId.
      * Prints a message if either the teacher or the course is not found.
-     * @param teacherId
+     * @param teacherId the teacher's ID
      * @param courseId The ID of the course to which the teacher should be assigned.
      */
     public void modifyCourseTeacher(String teacherId, String courseId) {
@@ -127,8 +147,8 @@ public class SchoolManagementSystem {
      *  Registers a course for a student based on the provided studentId and courseId.
      *  Checks various conditions, prints messages accordingly, and updates the student
      *  and course information if the registration is successful.
-     * @param studentId
-     * @param courseId
+     * @param studentId the student's ID
+     * @param courseId the course's ID
      */
     public void registerCourse(String studentId, String courseId) {
 
