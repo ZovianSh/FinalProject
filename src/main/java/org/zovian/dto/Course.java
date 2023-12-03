@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Arrays;
+
 /**
  * represents a course offered within the school system.
  * Each course has a unique ID, consisting of a prefixed 'C' followed by a three-digit number.
@@ -35,7 +37,10 @@ public class Course {
      * @param department the department to which the course belongs
      */
     public Course(String courseName, double credit, Department department) {
-        //C%03d
+        this.courseId = "C" + String.format("%03d", nextId++);
+        this.courseName = courseName;
+        this.department = department;
+        this.credit = credit;
     }
 
     /**
@@ -49,8 +54,9 @@ public class Course {
      * @param studentNum the number of students in the course
      * @return courseName, courseId, credit, department, teacher, students, studentNum
      */
-    @Override
+
     public String toString(String courseName, String courseId, double credit, Department department, Teacher teacher, Student[] students, int studentNum) {
-        return null;
+        return "Course{id='" + courseId + "', courseName='" + courseName + "', credit=" + credit + ", teacher=" + teacher +
+                ", department='" + department + "', students=" + Arrays.toString(students) + "}";
     }
 }

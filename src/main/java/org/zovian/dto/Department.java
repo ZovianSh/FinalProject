@@ -24,16 +24,17 @@ public class Department {
      * @param departmentName The name that describes the department.
      */
     public Department(String departmentName) {
-        //D%03d
+        this.departmentId = "D" + String.format("%03d", nextId++);
+        this.departmentName = departmentName;
     }
 
     /**
-     * Returns a string representation of the Department object.
+     * prints a string representation of the Department object.
      * @param departmentName the departments name
      * @param departmentId the department ID
      * @return departmentName, departmentId
      */
     public String toString(String departmentName, String departmentId) {
-        return null;
+        return "Department{id='" + departmentId + "', departmentName='" + departmentName + "'}";
     }
 }

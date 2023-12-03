@@ -2,6 +2,8 @@ package org.zovian.dto;
 
 import lombok.*;
 
+import java.util.Arrays;
+
 /**
  * Represents a student in the school system.
  * Each student has a unique ID, consisting of a prefixed 'S' followed by a three-digit number.
@@ -29,7 +31,10 @@ public class Student {
      * @param department The department to which the student belongs.
      */
     public Student(String fname, String lname, Department department) {
-        //S%03d
+        this.studentId = "S" + String.format("%03d", nextId++);
+        this.fname = fname;
+        this.lname = lname;
+        this.department = department;
     }
 
     /**
@@ -42,7 +47,8 @@ public class Student {
      * @param department the department that they belong
      * @return nextId, fname, lname, courses, courseNum,department
      */
-    public String toString(String studentId, String fname, String lname, Course[] courses, int courseNum, Department department) {
-        return null;
+    public String toString(String studentId, String fname, String lname, Department department, int courseNum, Course[] courses) {
+        return "Student{id='" + studentId + "', fname='" + fname + "', lname='" + lname + "', department=" + department +
+                ", courseNum=" + courseNum + ", courses=" + Arrays.toString(courses) + "}";
     }
 }

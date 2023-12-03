@@ -29,7 +29,10 @@ public class Teacher {
      * @param department the department to which the teacher belongs
      */
     public Teacher(String fname, String lname, Department department) {
-        //T%03d
+        this.teacherId = "T" + String.format("%03d", nextId++);
+        this.fname = fname;
+        this.lname = lname;
+        this.department = department;
     }
 
     /**
@@ -41,7 +44,8 @@ public class Teacher {
      * @return fname, lname, teacherId, department
      */
     public String toString(String fname, String lname, String teacherId, Department department) {
-        return null;//the teachers info
+        return "Teacher{id='" + teacherId + "', fname='" + fname + "', lname='" + lname +
+                "', department='" + department.getDepartmentName() + "'}";
     }
 
 }

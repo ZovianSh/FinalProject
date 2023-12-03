@@ -18,6 +18,11 @@ public class SchoolManagementSystem {
     private static final int MAX_TEACHER_NUM = 20;
     private static final int MAX_COURSE_NUM = 30;
 
+    private int departmentNum= 0;
+    private int studentNum= 0;
+    private int teacherNum= 0;
+    private int courseNum= 0;
+
     private Department[] departments;
     private Student[] students;
     private Teacher[] teachers;
@@ -27,66 +32,96 @@ public class SchoolManagementSystem {
      * constructs a new SchoolManagementSystem with empty lists for departments, teachers,students and courses
      */
     public SchoolManagementSystem() {
-
+        this.departments = new Department[MAX_DEPARTMENT_NUM];
+        this.students = new Student[MAX_STUDENT_NUM];
+        this.teachers = new Teacher[MAX_TEACHER_NUM];
+        this.courses = new Course[MAX_COURSE_NUM];
     }
 
     /**
-     * Adds a new department to the system with the given department name.
-     * @param departmentName name of the department
+     * Adds a new department to the system
+     * @param department the department
      */
-    public void addDepartment(String departmentName) {
-
+    public void addDepartment(Department department) {
+        if (departmentNum < MAX_DEPARTMENT_NUM) {
+            departments[departmentNum] = department;
+            System.out.println( department + "added successfully");
+        }
+        else {
+            System.out.println("Max department reached, add a new department failed.");
+        }
     }
 
     /**
      * Adds a new student to the system
-     * @param fname first name of the student
-     * @param lname last name of the student
-     * @param departmentId the ID of the department to which the student belongs
+     * @param student the student needed to be added
      */
-    public void addStudent(String fname, String lname, String departmentId) {
-
+    public void addStudent(Student student) {
+        if (studentNum < MAX_STUDENT_NUM) {
+            students[studentNum] = student;
+            System.out.println( student + "added successfully");
+        }
+        else {
+            System.out.println("Max student reached, add a new student failed.");
+        }
     }
 
     /**
      * Adds a new teacher to the system
-     * @param fname first name of the teacher
-     * @param lname last name of the teacher
-     * @param departmentId the ID of the department to which the teacher belongs
+     * @param teacher the teacher needed to be added
      */
-    public void addTeacher(String fname, String lname, String departmentId) {
-
+    public void addTeacher(Teacher teacher) {
+        if (teacherNum < MAX_TEACHER_NUM) {
+            teachers[teacherNum] = teacher;
+            System.out.println( teacher + "added successfully");
+        }
+        else {
+            System.out.println("Max teacher reached, add a new teacher failed.");
+        }
     }
 
     /**
      * Adds a new course to the system.
-     * @param courseName The name of the course.
-     * @param credit The credit hours associated with the course.
-     * @param departmentId the ID of the department to which the course belongs
+     * @param course the course needed to be added
      */
-    public void addCourse(String courseName, double credit, String departmentId) {
-
+    public void addCourse(Course course) {
+        if (courseNum < MAX_COURSE_NUM) {
+            courses[courseNum] = course;
+            System.out.println( course + "added successfully");
+        }
+        else {
+            System.out.println("Max course reached, add a new course failed.");
+        }
     }
 
     /**
      * displays information about all departments in the school
      */
     public void printDepartments() {
-
+        System.out.println("Displaying all departments:");
+        for (Department department : departments) {
+            System.out.println(department);
+        }
     }
 
     /**
      * displays information about all students in the school, including their registered courses.
      */
     public void printStudents() {
-
+        System.out.println("Displaying all students:");
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 
     /**
      * displays information about all teachers in the school, including the courses they teach
      */
     public void printTeachers() {
-
+        System.out.println("Displaying all teachers:");
+        for (Teacher teacher : teachers) {
+            System.out.println(teacher);
+        }
     }
 
     /**
@@ -94,7 +129,10 @@ public class SchoolManagementSystem {
      * and department associated with each course
      */
     public void printCourses() {
-
+        System.out.println("Displaying all courses:");
+        for (Course course : courses) {
+            System.out.println(course);
+        }
     }
 
     /**
