@@ -40,12 +40,13 @@ public class SchoolManagementSystem {
 
     /**
      * Adds a new department to the system
-     * @param department the department
+     * @param departmentName the name given to the new department
      */
-    public void addDepartment(Department department) {
+    public void addDepartment(String departmentName) {
         if (departmentNum < MAX_DEPARTMENT_NUM) {
-            departments[departmentNum] = department;
-            System.out.println( department + "added successfully");
+            Department department = new Department(departmentName);
+            departments[departmentNum++] = department;
+            System.out.println("new " + department.toString(departmentName, department.getDepartmentId()) + "added successfully!");
         }
         else {
             System.out.println("Max department reached, add a new department failed.");
@@ -53,13 +54,18 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * Adds a new student to the system
-     * @param student the student needed to be added
+     * Adds a new student in the system
+     * @param fname the student's first name
+     * @param lname the student's last name
+     * @param departmentId the department id they'll be in
      */
-    public void addStudent(Student student) {
+    public void addStudent(String fname, String lname, String departmentId) {
         if (studentNum < MAX_STUDENT_NUM) {
-            students[studentNum] = student;
-            System.out.println( student + "added successfully");
+            Department department = findDepartment(departmentId);
+
+            Student student = new Student(fname, lname, department);
+            students[studentNum++] = student;
+            System.out.println("new " + student.toString(student.getStudentId(), fname, lname, department, 0, new Course[0]) + " added successfully!");
         }
         else {
             System.out.println("Max student reached, add a new student failed.");
@@ -73,7 +79,7 @@ public class SchoolManagementSystem {
     public void addTeacher(Teacher teacher) {
         if (teacherNum < MAX_TEACHER_NUM) {
             teachers[teacherNum] = teacher;
-            System.out.println( teacher + "added successfully");
+            System.out.println( "new " + teacher + " added successfully!");
         }
         else {
             System.out.println("Max teacher reached, add a new teacher failed.");
@@ -87,7 +93,7 @@ public class SchoolManagementSystem {
     public void addCourse(Course course) {
         if (courseNum < MAX_COURSE_NUM) {
             courses[courseNum] = course;
-            System.out.println( course + "added successfully");
+            System.out.println( "new " + course + " added successfully");
         }
         else {
             System.out.println("Max course reached, add a new course failed.");
@@ -136,11 +142,16 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * Searches for a department in the school based on the provided departmentId.
-     * @param departmentId the department ID
-     * @return the Department with the specified ID, or null if not found.
+     * Searches for a department in the school based on the provided department Id.
+     * @param departmentId the department Id.
+     * @return the Department with the id and name.
      */
     public Department findDepartment(String departmentId) {
+        for (Department department : departments) {
+            if (department != null && department.getDepartmentId().equals(departmentId)) {
+                return department;
+            }
+        }
         return null;
     }
 

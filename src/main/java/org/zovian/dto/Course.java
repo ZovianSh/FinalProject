@@ -1,9 +1,6 @@
 package org.zovian.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Arrays;
 
@@ -17,6 +14,7 @@ import java.util.Arrays;
 @EqualsAndHashCode
 @Getter
 @Setter
+@AllArgsConstructor
 public class Course {
     private static final int MAX_STUDENT_NUM = 5;
     private static final int MAX_TEACHER_NUM = 1;
@@ -54,9 +52,8 @@ public class Course {
      * @param studentNum the number of students in the course
      * @return courseName, courseId, credit, department, teacher, students, studentNum
      */
-
     public String toString(String courseName, String courseId, double credit, Department department, Teacher teacher, Student[] students, int studentNum) {
-        return "Course{id='" + courseId + "', courseName='" + courseName + "', credit=" + credit + ", teacher=" + teacher +
-                ", department='" + department + "', students=" + Arrays.toString(students) + "}";
+        return "Course{id=" + courseId + ", courseName=" + courseName + ", credit=" + credit + ", teacher=" + teacher +
+                ", department=" + department + ", students=" + Arrays.toString(students) + "}";
     }
 }

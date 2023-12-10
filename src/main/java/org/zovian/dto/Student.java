@@ -13,6 +13,7 @@ import java.util.Arrays;
 @EqualsAndHashCode
 @Getter
 @Setter
+@AllArgsConstructor
 public class Student {
     private static final int MAX_COURSE_NUM = 5;
     private static int nextId = 1;
@@ -48,7 +49,7 @@ public class Student {
      * @return nextId, fname, lname, courses, courseNum,department
      */
     public String toString(String studentId, String fname, String lname, Department department, int courseNum, Course[] courses) {
-        return "Student{id='" + studentId + "', fname='" + fname + "', lname='" + lname + "', department=" + department +
+        return "Student{id=" + studentId + ", fname=" + fname + ", lname=" + lname + ", department=" + department +
                 ", courseNum=" + courseNum + ", courses=" + Arrays.toString(courses) + "}";
     }
 }

@@ -1,9 +1,6 @@
 package org.zovian.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * Represents a teacher in the school system.
@@ -14,6 +11,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Getter
 @Setter
+@AllArgsConstructor
 public class Teacher {
     private static int nextId = 1;
 
@@ -44,8 +42,8 @@ public class Teacher {
      * @return fname, lname, teacherId, department
      */
     public String toString(String fname, String lname, String teacherId, Department department) {
-        return "Teacher{id='" + teacherId + "', fname='" + fname + "', lname='" + lname +
-                "', department='" + department.getDepartmentName() + "'}";
+        return "Teacher{id=" + teacherId + ", fname=" + fname + ", lname=" + lname +
+                ", department=" + department.getDepartmentName() + "'}";
     }
 
 }

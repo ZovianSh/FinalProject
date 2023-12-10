@@ -1,9 +1,6 @@
 package org.zovian.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * Represents a department within the school system.
@@ -14,6 +11,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Getter
 @Setter
+@AllArgsConstructor
 public class Department {
     private static int nextId = 1;
     private String departmentId;
@@ -35,6 +33,6 @@ public class Department {
      * @return departmentName, departmentId
      */
     public String toString(String departmentName, String departmentId) {
-        return "Department{id='" + departmentId + "', departmentName='" + departmentName + "'}";
+        return "Department{id=" + departmentId + ", departmentName=" + departmentName + "}";
     }
 }
