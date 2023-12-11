@@ -4,10 +4,10 @@ import lombok.*;
 
 /**
  * Represents a teacher in the school system.
- * Each teacher has their unique ID, consisting of a prefixed 'T' followed by a three-digit number.
+ * Each teacher has their unique ID, consisting of a prefixed T followed by a three-digit number.
  * and each being associated with a specific department
  */
-@ToString
+
 @EqualsAndHashCode
 @Getter
 @Setter

@@ -7,7 +7,6 @@ import lombok.*;
  * Each department has a unique ID, consisting of a prefixed 'D' followed by a three-digit number.
  * It also contains a name that describes the department to which the course belongs to.
  */
-@ToString
 @EqualsAndHashCode
 @Getter
 @Setter

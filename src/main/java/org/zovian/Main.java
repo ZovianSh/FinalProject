@@ -32,7 +32,7 @@ public class Main {
 
         //register a student to a course
         smSystem.registerCourse("S001", "C001");
-
+        smSystem.registerCourse("S001", "C001");
 
 
 

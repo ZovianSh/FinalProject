@@ -104,7 +104,7 @@ public class SchoolManagementSystem {
     /**
      * Adds a new course to the system.
      * @param courseName the course name
-     * @param departmentId the department Id the course belongs to
+     * @param departmentId the department id the course belongs to
      * @param credit the course credit
      */
     public void addCourse(String courseName, double credit, String departmentId) {
@@ -169,8 +169,8 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * Searches for a department in the school based on the provided department Id.
-     * @param departmentId the department Id.
+     * Searches for a department in the school based on the provided department id.
+     * @param departmentId the department id.
      * @return the Department with the id and name.
      */
     public Department findDepartment(String departmentId) {
@@ -235,7 +235,6 @@ public class SchoolManagementSystem {
         Teacher newTeacher = findTeacher(teacherId);
 
         if (course != null && newTeacher != null) {
-            Teacher oldTeacher = course.getTeacher();
             course.setTeacher(newTeacher);
 
             System.out.println(course + " teacher info updated successfully.");
@@ -283,11 +282,19 @@ public class SchoolManagementSystem {
             return;
         }
 
-//        if (Arrays.asList(student.getCourses()).contains(course.getCourseName())) {
-//            System.out.println("Student " + studentId + " has already registered Course " + courseId +
-//                    ", register course " + courseId + " for student " + studentId + " failed.");
-//            return;
-//        }
+        boolean isAlreadyRegistered = false; //Bonus: check if the student has already registered
+        for (Course registeredCourse : student.getCourses()) {
+            if (registeredCourse != null && registeredCourse.equals(course)) {
+                isAlreadyRegistered = true;
+                break;
+            }
+        }
+
+        if (isAlreadyRegistered) {
+            System.out.println("Student " + studentId + " has already registered Course " + courseId +
+                    ", register course " + courseId + " for student " + studentId + " failed.");
+            return;
+        }
 
         if (courseNum < MAX_COURSE_NUM && studentNum < MAX_STUDENT_NUM) {
             //Add the course to the student's registered courses and ++

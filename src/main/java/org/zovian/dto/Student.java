@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Each student has a unique ID, consisting of a prefixed 'S' followed by a three-digit number.
  * Students can be registered for a maximum number of courses (MAX_COURSE_NUM).
  */
-@ToString
+
 @EqualsAndHashCode
 @Getter
 @Setter

@@ -2,7 +2,6 @@ package org.zovian.dto;
 
 import lombok.*;
 
-import java.util.Arrays;
 
 /**
  * represents a course offered within the school system.
@@ -10,7 +9,6 @@ import java.util.Arrays;
  * includes information about the course name, credit value, the department it belongs to, the teacher
  * responsible for the course, and an array of students enrolled in the course.
  */
-@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
