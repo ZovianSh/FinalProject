@@ -35,15 +35,12 @@ public class Teacher {
 
     /**
      * Returns a string representation of the Teacher object.
-     * @param fname the teacher's first name
-     * @param lname the teacher's last name
-     * @param teacherId the teacher's ID
-     * @param department the department the teacher belongs
      * @return fname, lname, teacherId, department
      */
-    public String toString(String fname, String lname, String teacherId, Department department) {
+    @Override
+    public String toString() {
         return "Teacher{id=" + teacherId + ", fname=" + fname + ", lname=" + lname +
-                ", department=" + department.getDepartmentName() + "'}";
+                ", department=" + department.getDepartmentName() + "}";
     }
 
 }

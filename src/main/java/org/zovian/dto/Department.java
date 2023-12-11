@@ -28,11 +28,10 @@ public class Department {
 
     /**
      * prints a string representation of the Department object.
-     * @param departmentName the departments name
-     * @param departmentId the department ID
      * @return departmentName, departmentId
      */
-    public String toString(String departmentName, String departmentId) {
+    @Override
+    public String toString() {
         return "Department{id=" + departmentId + ", departmentName=" + departmentName + "}";
     }
 }

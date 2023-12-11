@@ -36,20 +36,24 @@ public class Student {
         this.fname = fname;
         this.lname = lname;
         this.department = department;
+        this.courses = new Course[MAX_COURSE_NUM];
     }
 
     /**
      * Returns a string representation of the Student object.
-     * @param studentId the student ID
-     * @param fname the first name of the student
-     * @param lname the last name of the student
-     * @param courses the courses they are in
-     * @param courseNum the number of courses they are in
-     * @param department the department that they belong
-     * @return nextId, fname, lname, courses, courseNum,department
+     * @return nextId, fname, lname, courses, courseNum, department
      */
-    public String toString(String studentId, String fname, String lname, Department department, int courseNum, Course[] courses) {
-        return "Student{id=" + studentId + ", fname=" + fname + ", lname=" + lname + ", department=" + department +
-                ", courseNum=" + courseNum + ", courses=" + Arrays.toString(courses) + "}";
+    @Override
+    public String toString() {
+        String courseNamesStr = "[";
+        for (Course course : courses) {
+            if (course != null) {
+                courseNamesStr += course.getCourseName() + ", ";
+            }
+        }
+        courseNamesStr += "]";
+
+        return "Student{id=" + getStudentId() + ", fname=" + fname + ", lname=" + lname + ", department=" + department +
+                ", courseNum=" + courseNum + ", courses=" + courseNamesStr + "}";
     }
 }
