@@ -16,7 +16,7 @@ import java.util.Arrays;
 @Setter
 @AllArgsConstructor
 public class Course {
-    private static final int MAX_STUDENT_NUM = 5;
+    public static final int MAX_STUDENT_NUM = 5;
     private static final int MAX_TEACHER_NUM = 1;
     private static int nextId = 1;
 
@@ -53,7 +53,7 @@ public class Course {
         String studentNamesStr = "[";
         for (Student student : students) {
             if (student != null) {
-                studentNamesStr += student.getFname() + student.getLname() + ", ";
+                studentNamesStr += student.getFname() + " " + student.getLname() + ", ";
             }
         }
         studentNamesStr += "]";

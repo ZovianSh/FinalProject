@@ -15,7 +15,7 @@ import java.util.Arrays;
 @Setter
 @AllArgsConstructor
 public class Student {
-    private static final int MAX_COURSE_NUM = 5;
+    public static final int MAX_COURSE_NUM = 5;
     private static int nextId = 1;
 
     private String fname;

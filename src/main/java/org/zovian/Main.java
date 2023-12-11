@@ -25,12 +25,13 @@ public class Main {
         System.out.println(smSystem.findDepartment("D001"));
         System.out.println(smSystem.findStudent("S001"));
         System.out.println(smSystem.findTeacher("T001"));
-        System.out.println(smSystem.findCourse("c001"));
+        System.out.println(smSystem.findCourse("C001"));
 
         //modify the teacher of a course
-        smSystem.modifyCourseTeacher("T001", "C002");
+        smSystem.modifyCourseTeacher("T001", "C001");
 
         //register a student to a course
+        smSystem.registerCourse("S001", "C001");
 
 
 

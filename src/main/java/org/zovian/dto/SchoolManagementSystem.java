@@ -256,7 +256,52 @@ public class SchoolManagementSystem {
      * @param courseId the course's ID
      */
     public void registerCourse(String studentId, String courseId) {
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
 
+        if (student == null) {
+            System.out.println("Cannot find any student match with studentId " + studentId +
+                    ", register course for student " + studentId + " failed.");
+            return;
+        }
+
+        if (course == null) {
+            System.out.println("Cannot find any course match with courseId " + courseId +
+                    ", register course for student " + studentId + " failed.\"");
+            return;
+        }
+
+        if (student.getCourseNum() >= Student.MAX_COURSE_NUM) {
+            System.out.println("Student " + studentId + " has already registered " + Student.MAX_COURSE_NUM +
+                    " courses, register course for student " + studentId + " failed.");
+            return;
+        }
+
+        if (course.getStudentNum() >= Course.MAX_STUDENT_NUM) {
+            System.out.println("Course " + courseId + " has been fully registered, register course " + courseId +
+                    " for student " + studentId + " failed.");
+            return;
+        }
+
+//        if (Arrays.asList(student.getCourses()).contains(course.getCourseName())) {
+//            System.out.println("Student " + studentId + " has already registered Course " + courseId +
+//                    ", register course " + courseId + " for student " + studentId + " failed.");
+//            return;
+//        }
+
+        if (courseNum < MAX_COURSE_NUM && studentNum < MAX_STUDENT_NUM) {
+            //Add the course to the student's registered courses and ++
+            student.getCourses()[student.getCourseNum()] = course;
+            student.setCourseNum(student.getCourseNum() + 1);
+
+            //Add the student to the course's registered students and ++
+            course.getStudents()[course.getStudentNum()] = student;
+            course.setStudentNum(course.getStudentNum() + 1);
+
+            System.out.println("Student registered to course successfully!\n" +
+                    "Latest student info: " + student +
+                    "\nLatest course info: " + course);
+        }
     }
 
 }
